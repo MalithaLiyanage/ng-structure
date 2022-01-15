@@ -1,26 +1,32 @@
-<mat-sidenav-container class="sidenav-container">
+<mat-sidenav-container (backdropClick)="onClickBackDrop()" class="sidenav-container">
   <mat-sidenav #drawer class="sidenav" fixedInViewport
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="(isHandset$ | async) === false">
+      [opened]="isToggleDrawer">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#">Link 1</a>
-      <a mat-list-item href="#">Link 2</a>
-      <a mat-list-item href="#">Link 3</a>
+      <a mat-list-item href="#">Home</a>
+      <a mat-list-item href="#">Products</a>
+      <a mat-list-item href="#">Users</a>
+      <a mat-list-item href="#">Contacts</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
+    <mat-toolbar>
       <button
         type="button"
         aria-label="Toggle sidenav"
         mat-icon-button
-        (click)="drawer.toggle()"
+        (click)="toggleDrawer()"
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>ng-structure</span>
+      <mat-nav-list class="toolbar-nav-list" *ngIf="!(isHandset$ | async)">
+        <a mat-list-item href="#">Home</a>
+        <a mat-list-item href="#">Products</a>
+        <a mat-list-item href="#">Users</a>
+        <a mat-list-item href="#">Contacts</a>
+      </mat-nav-list>
     </mat-toolbar>
     <!-- Add Content Here -->
   </mat-sidenav-content>
