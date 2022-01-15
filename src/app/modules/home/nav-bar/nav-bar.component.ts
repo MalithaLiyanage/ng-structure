@@ -9,7 +9,7 @@ import { map, shareReplay } from 'rxjs/operators';
   styleUrls: ['./nav-bar.component.css']
 })
 export class NavBarComponent {
-  isToggleDrawer = false;
+
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches),
@@ -18,11 +18,4 @@ export class NavBarComponent {
 
   constructor(private breakpointObserver: BreakpointObserver) {}
 
-  toggleDrawer() {
-    this.isToggleDrawer = !this.isToggleDrawer;
-  }
-
-  onClickBackDrop() {
-    this.isToggleDrawer = false;
-  }
 }

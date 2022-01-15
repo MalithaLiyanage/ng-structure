@@ -10,7 +10,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import {HomeModule} from "./modules/home/home.module";
 
 @NgModule({
   declarations: [
@@ -25,8 +24,7 @@ import {HomeModule} from "./modules/home/home.module";
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule,
-    HomeModule
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
