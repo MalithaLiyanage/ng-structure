@@ -7,7 +7,7 @@ export class StateService {
 
   constructor() { }
   modules = ['home', 'contact', 'users', 'products'];
-  appState = new Map();
+  appState: Map<string, Object> = new Map();
 
   initializeState() {
     this.modules.forEach((module: string) => {
