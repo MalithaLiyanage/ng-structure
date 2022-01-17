@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {StateService} from "./state.service";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ng-structure';
+
+  constructor (
+    private stateService: StateService
+  ) {
+    this.stateService.initializeState();
+  }
+
 }
